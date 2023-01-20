@@ -253,3 +253,15 @@ import name,{a,b} from `export.mjs`
         // react-router-dom
         <Link to="/About"></Link>
         ```
+
+#
+> We can run npm page just with build directory runnning in liveserver
+#
+
+# Deployment on Github
+- Remove routes (They are problematic while deploying on `GitHub only`)
+- Read https://github.com/gitname/react-gh-pages
+
+# CLS( Cumulative layout shift )
+- Shifting of components when there is a pop-up
+- SEO perfers website with less CLS
