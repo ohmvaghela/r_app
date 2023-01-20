@@ -41,6 +41,10 @@ let name = "ohm";
 - so it should be named with capital letter at starting
 - Navbar.js
 
+# HTML DOM Document
+https://www.w3schools.com/jsref/dom_obj_document.asp
+
+
 # Using bootstrap
 > - Cautions while using bootstrap with reactjs
 
@@ -145,6 +149,9 @@ import name,{a,b} from `export.mjs`
 # States, Event Handling, 
 - React Objects used to store data about components
 - Declaring state
+- In `onClick` we can only pass a `function` Eg. onClick={HandleEvent} --> `Correct`
+- In `onClick` we can `not` pass a `function call` Eg. onClick={HandleEvent(Parameter)} --> `Incorrect`
+- We can pass `function call` in `onClick` by Eg. `onClick={ ()=>HandleEvent(Parameter) }` --> `Correct` 
 - These States can perform dynamic work without reloading or changing webpage
     - Eg. taking data and printing it simuntaniously like writing a gmail
 ```js
@@ -185,7 +192,7 @@ import name,{a,b} from `export.mjs`
 
 ```
 
-# Using js 
+# Using js in jsx
 
 ```js
     {}// We can write JS in this curly bracket 
@@ -194,9 +201,14 @@ import name,{a,b} from `export.mjs`
 
 ```
 # changing background color
-```js
+- ```js
     document.body.style.backgroundColor='black'
-```
+    ```
+- Using 2nd method we need to remove each and every color every time we change it
+- Coz once we add an element to classList document.body will use the first added element
+    - ```js
+        document.body.classList.add='bg-primary'
+        ```
 
 # Changing icon and title/webiste name
 - index.html
