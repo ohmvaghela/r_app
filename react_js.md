@@ -35,8 +35,13 @@ let name = "ohm";
 
 > files in `Public` folder are available to all so do not add any sensitive content in it
 
-# Using bootstrap
+# importing component 
+> - Name always starts with capital letter
+- Say we have .js file in component folder
+- so it should be named with capital letter at starting
+- Navbar.js
 
+# Using bootstrap
 > - Cautions while using bootstrap with reactjs
 
 > - change "`class`" to "`className`"
@@ -151,7 +156,7 @@ import name,{a,b} from `export.mjs`
     textEdit("new text")
 ```
 - textarea
-```jsx
+```js
 
     export default function TextBar(props){
         const [text,textEdit] = useState("Default State");
@@ -164,8 +169,9 @@ import name,{a,b} from `export.mjs`
         }
         
         return(
+            
             <>
-            <div>
+            <div className="container mb-5"> {/* mb-(0-5) is used for spacing*/} 
                 <textarea className="form-control" value={text} onChange={handleChange}>
                 {/* here the "text" is present in the box and it is changed as per keyboard  */}
 
@@ -187,3 +193,29 @@ import name,{a,b} from `export.mjs`
     // " `` " this is used when we want to use variable with string   
 
 ```
+# changing background color
+```js
+    document.body.style.backgroundColor='black'
+```
+
+# Changing icon and title/webiste name
+- index.html
+- Changing icon
+    - ```html
+        <link rel="icon" href="%PUBLIC_URL%/among_us.ico" />
+        <link rel="apple-touch-icon" href="%PUBLIC_URL%/among_us.png"/>
+        ```
+- Changing title
+    - Default title - From index.html
+    -  ```html
+        <title>Among us</title>
+        ```
+    - From anywhere else using js
+        ```js
+         document.title = "title change";
+        ```
+# Web page routing
+- A mechanism where `http` requests are routed to code which handles them
+- In ReactJs
+    - Say we want to change page content but dont want to change all components
+    - Like navbar, content bar we want to be same 

@@ -1,25 +1,31 @@
-import logo from './logo.svg';
+import { useState } from 'react';
 import './App.css';
+import Alert from './components/Alert';
+import Container from './components/Container';
+// import studentInfo,{otherDetails} from './components/export/export.mjs';
+import Navbar from './components/Navbar.js';
+
 
 function App() {
+  // const nane = "ohm";
+  document.body.style.backgroundColor = '#343a40'
+  const [trig, trigHandle] = useState(false);
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+    <>
+      <Navbar name="ohm" trig={trig} trigHandle={trigHandle} ></Navbar>
+      <Container ></Container>
+      <div>
+        {trig? null :<Alert trig={trig}></Alert>  }
+      </div>
+
+
+    </>
+
+
+    );
 }
 
 export default App;
