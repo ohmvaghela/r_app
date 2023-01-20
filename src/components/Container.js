@@ -10,8 +10,8 @@ export default function Container(props){
 return(
 <>
 
-<div className="container mb-6 " >
-    <textarea className="form-control" placeholder={text} onChange={handleChange} ></textarea>
+<div className="container mb-6 my-2" >
+    <textarea className="form-control" placeholder={text} onChange={handleChange}style={{height:'400px'}} ></textarea>
 </div>
 </>
 );}

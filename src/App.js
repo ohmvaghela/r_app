@@ -15,12 +15,23 @@ function App() {
   // document.body.style.backgroundColor = 'white'
   const [trig, trigHandle] = useState(false);
 
+  const removeColors = () =>{
+    document.body.classList.remove('bg-primary');
+    document.body.classList.remove('bg-secondary');
+    document.body.classList.remove('bg-dark');
+    document.body.classList.remove('bg-warning');
+  }
 
+  const colorChange = (color)=>{
+    console.log(color);
+    removeColors();
+    document.body.classList.add("bg-"+color);
+  }
   return (
 
     <>
     <Router>
-        <Navbar name="ohm" trig={trig} trigHandle={trigHandle} ></Navbar>
+        <Navbar name="ohm" trig={trig} trigHandle={trigHandle} colorChange={colorChange} ></Navbar>
         <Container ></Container>
 
       <Routes>

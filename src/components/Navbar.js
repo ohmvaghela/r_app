@@ -40,15 +40,18 @@ export default function Navbar(prop) {
                 <Link className="nav-link disabled">Disabled</Link>
               </li>
             </ul>
+
+            <div className='p-3 bg-warning mx-2'  onClick={()=>{prop.colorChange('warning')}}    style={{width:'40px', height:'40px'}}></div>
+            <div className='p-3 bg-primary mx-2'  onClick={()=>{prop.colorChange('primary')}}    style={{width:'40px', height:'40px'}}></div>
+            <div className='p-3 bg-dark mx-2'     onClick={()=>{prop.colorChange('dark')}}       style={{width:'40px', height:'40px'}}></div>
+            <div className='p-3 bg-secondary mx-2'onClick={()=>{prop.colorChange('secondary')}}  style={{width:'40px', height:'40px'}}></div>
+
             <form className="d-flex" role="search">
               <input className="form-control me-2" type="search" placeholder={prop.roll} aria-label="Search"/>
               <button className="btn btn-outline-success" type="submit">Search</button>
             </form>
 
-            <div className="form-check form-switch">
-              <input className="form-check-input" onClick={HandleClick} type="checkbox" role="switch" id="flexSwitchCheckDefault"/>
-              <label className="form-check-label" for="flexSwitchCheckDefault"></label>
-            </div>
+
 
           </div>
         </div>
