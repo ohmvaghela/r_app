@@ -219,3 +219,37 @@ import name,{a,b} from `export.mjs`
 - In ReactJs
     - Say we want to change page content but dont want to change all components
     - Like navbar, content bar we want to be same 
+    - This all is done without reloading page
+
+## Using Router
+- Importing 
+```js
+    import { BrowserRouter as Router, Route, Routes } from 'react-router-dom' 
+```
+- add <Router> </Router> just after <></>
+- Syntax
+    - Include all dynamic components in <Routes></Routes>
+    - Keep all the static components out of <Routes></Routes>
+    - ```js
+
+        <>
+        <Router>
+            <Navbar/>
+            <Routes>
+                <Route path="/"/>// default path
+                <Route path="/TextBax"  element={<Container />}> </Route>
+                <Route path="/TextBox/:Color"element={<Color />}></Route>
+                <Route path="/About"    element={<About />}>     </Route>
+            </Routes>
+        </Router>
+        </>
+        ```
+    <!-- - Nested path -->
+
+    - Changes in component files
+        ```js
+        // old
+        <a herf="/About"></a>
+        // react-router-dom
+        <Link to="/About"></Link>
+        ```
