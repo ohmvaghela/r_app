@@ -1,25 +1,20 @@
-import PropTypes from "prop-types";
+// import PropTypes from "prop-types";
 import React, { Component } from "react";
 
 export class Box extends Component {
-  static propTypes = {};
-
-    constructor(){
-        super();
-        console.log("constructor passed");
-    }
+//   static propTypes = {};
 
   render() {
       let {title, description, imgUrl}  = this.props;
     return (
       <div className="card" style={{ width: "18rem" }}>
-        <img src="..." className="card-img-top" alt="..." />
+        <img src={imgUrl} className="card-img-top" alt="..." />
         <div className="card-body">
           <h5 className="card-title">{title}</h5>
           <p className="card-text">
             {description}
           </p>
-          <a href="#" className="btn btn-primary">
+          <a href={imgUrl} className="btn btn-primary">
             Go somewhere
           </a>
         </div>

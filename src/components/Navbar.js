@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 export default function Navbar(prop) {
 
-    const HandleClick = ()=>
+    // const HandleClick = ()=>
     {prop.trigHandle(!prop.trig)}
     return (
     <>

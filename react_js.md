@@ -323,6 +323,34 @@ export default Box
         render(){}
     }
     ```
+- using state in constructor
+- ```js
+        article = [...]
+        constructor(){
+            super();
+            this.state ={
+                article : this.article,
+                loading : false
+            };
+        }
+    ```
+
+# Iterating over items in class 
+- Key is must
+- this.state.arrayName.map(function which returns somethings)
+- `.map` is an iterator which needs input function which returns something
+- ```js
+    return(
+        <>
+        <div className="container"/>
+        {
+            this.state.article.map((element)=>{
+                return <div className="name" key={element.key}/>
+            })
+        }
+        </>
+    )
+    ```
 
 #
 # Hooks?

@@ -5,7 +5,7 @@ import Container from './components/Container';
 // import studentInfo,{otherDetails} from './components/export/export.mjs';
 import Navbar from './components/Navbar.js';
 import About from './components/About.js';
-import Box from './components/Box';
+// import Box from './components/Box';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import Cards from './components/Cards';
 import Home from './components/Home';
