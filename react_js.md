@@ -352,6 +352,20 @@ export default Box
     )
     ```
 
-#
-# Hooks?
 
+# Hooks
+- React Hooks are simple JavaScript functions that we can use to isolate the reusable part from a functional component
+- Eg. useState
+# Changing url with variables
+- instead of using url like this 
+```
+    "https://url"
+```
+- use 
+```
+`http://url`
+```
+- now variable can be used in url as
+```
+`http://url${javascript can be used here}`
+```

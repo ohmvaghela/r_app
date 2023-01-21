@@ -1,14 +1,15 @@
 import React,{ useState } from 'react';
 import './App.css';
 // import Alert from './components/Alert';
-import Container from './components/Container';
+// import Container from './components/Container';
 // import studentInfo,{otherDetails} from './components/export/export.mjs';
 import Navbar from './components/Navbar.js';
-import About from './components/About.js';
+// import About from './components/About.js';
 // import Box from './components/Box';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
+// import { Route, Routes } from 'react-router-dom'
+import { BrowserRouter as Router } from 'react-router-dom'
 import Cards from './components/Cards';
-import Home from './components/Home';
+// import Home from './components/Home';
 
 
 
@@ -34,17 +35,17 @@ function App() {
     <>
     <Router>
         <Navbar name="ohm" trig={trig} trigHandle={trigHandle} colorChange={colorChange} ></Navbar>
-        <Container ></Container>
+        {/* <Container ></Container> */}
         
         <Cards></Cards>
         
-      <Routes>
+      {/* <Routes> */}
       
-        <Route exact path="/" element={<Home/>}/>
-        <Route exact path="/about" element={<Container/>}> </Route>
-        <Route exact path="/about/:path" element={<> <Container/> <About/> </> }> </Route> 
+        {/* <Route exact path="/" element={<Home/>}/> */}
+        {/* <Route exact path="/about" element={<Container/>}> </Route> */}
+        {/* <Route exact path="/about/:path" element={<> <Container/> <About/> </> }> </Route>  */}
       
-      </Routes>
+      {/* </Routes> */}
     
     </Router>    
 
