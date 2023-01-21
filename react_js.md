@@ -277,3 +277,37 @@ import name,{a,b} from `export.mjs`
 # CLS( Cumulative layout shift )
 - Shifting of components when there is a pop-up
 - SEO perfers website with less CLS
+
+# React class based component 
+- Shortcut : `rcep`
+- `Render()` is used return tha html of the code
+```js
+
+import PropTypes from 'prop-types'
+import React, { Component } from 'react'
+
+export class Box extends Component {
+  static propTypes = {}
+
+  render() {
+    return (
+      <div>Box</div>
+    )
+  }
+}
+
+export default Box
+
+```
+
+# NewsAPI
+
+- `API Key` : 8629268f6f5e4947aba4c00626389b7e
+
+# using props in class based components
+
+```js
+    render(){
+    const {prop1, prop2, prop3} = this.prop
+    return(){ } }
+```

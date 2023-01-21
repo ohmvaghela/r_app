@@ -5,8 +5,9 @@ import Container from './components/Container';
 // import studentInfo,{otherDetails} from './components/export/export.mjs';
 import Navbar from './components/Navbar.js';
 import About from './components/About.js';
-
+import Box from './components/Box';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
+import Cards from './components/Cards';
 
 
 
@@ -33,22 +34,17 @@ function App() {
     <Router>
         <Navbar name="ohm" trig={trig} trigHandle={trigHandle} colorChange={colorChange} ></Navbar>
         <Container ></Container>
-
+        
+        <Cards></Cards>
+        
       <Routes>
-
+      
         <Route exact path="/" />
         <Route exact path="about" element={<Container/>}> </Route>
-        <Route exact path="/about/:path" 
-        element={
-        <>
-          <Container/>
-          <About/>
-        </>
-        }>
-        
-        </Route>
+        <Route exact path="/about/:path" element={<> <Container/> <About/> </> }> </Route> 
       
       </Routes>
+    
     </Router>    
 
 
