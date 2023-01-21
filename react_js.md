@@ -99,6 +99,7 @@ import name,{a,b} from `export.mjs`
 # Using extrnal file components & Props and Proptype
 - Proptype - used to define incoming data
 - defaultProps - default data if props not passed 
+>- `Props` are `read-only`
 - component.js
 - ```js
     import React from 'react'
@@ -311,3 +312,18 @@ export default Box
     const {prop1, prop2, prop3} = this.prop
     return(){ } }
 ```
+# Creating contructor
+
+- Basic syntax
+- ```js
+    export class Cards extends Component {
+        constructor(){
+            super();
+        }
+        render(){}
+    }
+    ```
+
+#
+# Hooks?
+

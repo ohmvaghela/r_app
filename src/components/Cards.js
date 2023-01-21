@@ -6,22 +6,22 @@ export class Cards extends Component {
   static propTypes = {}
 
   render() {
-    let {title, description}  = this.props;
+    let {title, description, imgUrl}  = this.props;
     return (
     <>
     <div className="container text-center my-3 ">
             <div className='row align-items-start'>
             <div className='col my-3'>
-                    <Box></Box>
+                    <Box title={title} description={description}></Box>
                 </div>
                 <div className='col my-3'>
-                    <Box></Box>
+                    <Box title={title} description={description}></Box>
                 </div>
                 <div className='col my-3'>
-                    <Box></Box>
+                    <Box title={title} description={description}></Box>
                 </div>
                 <div className='col my-3'>
-                    <Box></Box>
+                    <Box title={title} description={description}></Box>
                 </div>
             </div>
         
@@ -31,4 +31,9 @@ export class Cards extends Component {
   }
 }
 
+
+Cards.defaultProps = {
+    title : "default title",
+    description : "default description"    
+}
 export default Cards

@@ -8,6 +8,7 @@ import About from './components/About.js';
 import Box from './components/Box';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import Cards from './components/Cards';
+import Home from './components/Home';
 
 
 
@@ -39,8 +40,8 @@ function App() {
         
       <Routes>
       
-        <Route exact path="/" />
-        <Route exact path="about" element={<Container/>}> </Route>
+        <Route exact path="/" element={<Home/>}/>
+        <Route exact path="/about" element={<Container/>}> </Route>
         <Route exact path="/about/:path" element={<> <Container/> <About/> </> }> </Route> 
       
       </Routes>
