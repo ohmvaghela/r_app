@@ -317,8 +317,8 @@ export default Box
 - Basic syntax
 - ```js
     export class Cards extends Component {
-        constructor(){
-            super();
+        constructor(props){
+            super(props);
         }
         render(){}
     }
@@ -369,3 +369,94 @@ export default Box
 ```
 `http://url${javascript can be used here}`
 ```
+
+# Adding `loading spinner`
+- It is require while fetching data so we start it before `await` function and ends after data is fetched using await function
+```js
+
+
+  async componentDidMount(){
+      let url = "https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=8629268f6f5e4947aba4c00626389b7e";
+      this.setState({loading:true});// show spinner
+      let data = await fetch(url);
+      let dataJSON = await data.json();
+      this.setState({loading:false});// remove spinner
+      console.log(dataJSON);
+      this.setState({article : dataJSON.article});
+
+      render(){
+        return(
+            <>
+            {loading && <Spinner/>}
+            <div className="...">...</div>
+            </>
+        )
+      }
+  }
+
+```
+
+# Remounting problem with API in Routes
+- Say on changing category in url we get different news
+    - newsapi.org/v2/top-headlines?`sources=science`&apiKey=8629268f6f5e4947aba4c00626389b7e
+    - newsapi.org/v2/top-headlines?`sources=sports`&apiKey=8629268f6f5e4947aba4c00626389b7e
+    
+- If we use API like this it will change page content but `after reload`
+```js
+<>
+    <Router>
+        <Navbar/>
+        <Routes>
+            <Route path="/TextBax"   element={<ListNews category="general"  />}> </Route>
+            <Route path="/science"   element={<ListNews category="science"  />}> </Route>
+            <Route path="/sports"    element={<ListNews category="sports"   />}> </Route>
+            <Route path="/business"  element={<ListNews category="business" />}> </Route>
+        </Routes>
+    </Router>
+</>
+```
+- Reason : the data is not mounted it uses already mounted data
+- Like if we were on science and we click on sports so it will still be science 
+- It will change content if we reload
+- To change it we can add key to route 
+
+```js
+<>
+    <Router>
+        <Navbar/>
+        <Routes>
+            <Route myKey="TextBax"  path="/TextBax"   element={<ListNews category="general"  />}> </Route>
+            <Route myKey="science"  path="/science"   element={<ListNews category="science"  />}> </Route>
+            <Route myKey="sports"   path="/sports"    element={<ListNews category="sports"   />}> </Route>
+            <Route myKey="business" path="/business"  element={<ListNews category="business" />}> </Route>
+        </Routes>
+    </Router>
+</>
+```
+- Now it will work fine
+
+
+# Level of object displayed
+- in CSS style `zIndex:"1"` means on top
+
+# React component lifecycle
+- Mounting : Birth of component
+- Update : Growth of component
+- Unmount : Death of component
+
+## DOM (Document Object Model)
+
+## Render()
+- used to render HTML content in react
+- `Require class based component`
+- Should be `pure` : `no upadte of state`
+
+## componentDidMount()
+- Runs after component output has been rendered to DOM
+
+## compoenentDidUpdate()
+- Invoked as there is any change requested
+- Usually updating in response of `state` or `props`
+
+## componentDidUnmount()
+- Just before component is unmounted or destroyed
