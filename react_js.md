@@ -1,5 +1,10 @@
+# HTML DOM Document
+https://www.w3schools.com/jsref/dom_obj_document.asp
+<img src="./DOM.svg.png" width=500>
+
 # Creating ReactApp
     npx create-react-app app_name
+
 
 ## Start app
     npm start
@@ -41,8 +46,6 @@ let name = "ohm";
 - so it should be named with capital letter at starting
 - Navbar.js
 
-# HTML DOM Document
-https://www.w3schools.com/jsref/dom_obj_document.asp
 
 
 # Using bootstrap
@@ -353,9 +356,6 @@ export default Box
     ```
 
 
-# Hooks
-- React Hooks are simple JavaScript functions that we can use to isolate the reusable part from a functional component
-- Eg. useState
 # Changing url with variables
 - instead of using url like this 
 ```
@@ -370,8 +370,10 @@ export default Box
 `http://url${javascript can be used here}`
 ```
 
-# Adding `loading spinner`
+# Using Fetch And adding Spinner And Conditional Rendering
 - It is require while fetching data so we start it before `await` function and ends after data is fetched using await function
+- to access state use : `this.state?.article...`
+    - `?.` wont run till we get the states 
 ```js
 
 
@@ -388,7 +390,7 @@ export default Box
         return(
             <>
             {loading && <Spinner/>}
-            <div className="...">...</div>
+            <div className="..." title={this.state?.article.title}>...</div>
             </>
         )
       }
@@ -444,7 +446,6 @@ export default Box
 - Update : Growth of component
 - Unmount : Death of component
 
-## DOM (Document Object Model)
 
 ## Render()
 - used to render HTML content in react
@@ -460,3 +461,26 @@ export default Box
 
 ## componentDidUnmount()
 - Just before component is unmounted or destroyed
+
+# enivronment variable
+- say we create file `.env.local`
+- Now if we want to use the variables in our src file 
+    - We need to start name with `REACT_APP_`
+    - now the variable with this name can be used anywhere in project 
+- say varialbe is `REACT_APP_API_KEY`
+- Using it in src files
+```js
+function App() {
+  const apiKey =  process.env.REACT_APP_API_KEY
+  return ()}
+
+```
+# Hooks
+- React Hooks are simple JavaScript functions that we can use to isolate the reusable part from a functional component
+    - Eg. useState
+- Allow to do things in `function based components` that we use to do in `class based component`
+- Commonly used hooks
+    1. useState
+    2. useEffect
+    3. useContext
+    4. useRef

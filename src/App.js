@@ -10,7 +10,7 @@ import Navbar from './components/Navbar.js';
 import { BrowserRouter as Router } from 'react-router-dom'
 import Cards from './components/Cards';
 // import Home from './components/Home';
-
+import LoadingBar from 'react-top-loading-bar';
 
 
 function App() {
@@ -30,11 +30,16 @@ function App() {
     removeColors();
     document.body.classList.add("bg-"+color);
   }
+
+  const [progress,progressHandle] = useState(0);
   return (
 
     <>
     <Router>
         <Navbar name="ohm" trig={trig} trigHandle={trigHandle} colorChange={colorChange} ></Navbar>
+        
+        <LoadingBar
+        color='#fd7e14' progress={10} onLoaderFinished={()=>{progressHandle(0)}}></LoadingBar>
         {/* <Container ></Container> */}
         
         <Cards></Cards>

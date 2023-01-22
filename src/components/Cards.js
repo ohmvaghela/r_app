@@ -1,11 +1,10 @@
 // import PropTypes from 'prop-types'
 import React, { Component } from "react";
 import Box from "./Box";
-// import NewsJson from "./jsonFile/data.json"
-import NewsJson from "./jsonFile/small.json"
+import NewsJson from "./jsonFile/data.json";
+// import NewsJson from "./jsonFile/small.json"
 
 export class Cards extends Component {
-
   article = NewsJson.articles;
   constructor() {
     super();
@@ -16,13 +15,14 @@ export class Cards extends Component {
     };
   }
 
-//   async componentDidMount(){
-//       let url = "https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=8629268f6f5e4947aba4c00626389b7e";
-//       let data = await fetch(url);
-//       let dataJSON = await data.json();
-//       console.log(dataJSON);
-//       this.setState({article : dataJSON.article});
-//   }
+  async componentDidMount() {
+    let url =
+      "https://newsapi.org/v2/top-headlines?pageSize=10?sources=techcrunch&apiKey=8629268f6f5e4947aba4c00626389b7e";
+    let data = await fetch(url);
+    let dataJSON = await data.json();
+    // console.log(dataJSON);
+    this.setState({ article: dataJSON.article });
+  }
 
   render() {
     return (
@@ -31,10 +31,15 @@ export class Cards extends Component {
           <div className="row align-items-start row-cols-3">
             {this.state.article?.map((element) => {
               return (
-                <div className="col my-3" key={element.url}>
-                    <Box title={element.title} description={element.description} urlToImage={element.urlToImage} url={element.url}/>  
+                <div className="col my-3" key={element?.url}>
+                  <Box
+                    title={element?.title}
+                    description={element?.description}
+                    urlToImage={element?.urlToImage}
+                    url={element?.url}
+                  />
                 </div>
-                );
+              );
             })}
           </div>
         </div>
